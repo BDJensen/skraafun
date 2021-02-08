@@ -1,0 +1,29 @@
+FROM python:latest
+#FROM python:3.7
+
+# https://stackoverflow.com/questions/55313610/importerror-libgl-so-1-cannot-open-shared-object-file-no-such-file-or-directo
+
+#RUN apt-get update 
+#RUN apt-get install ffmpeg libsm6 libxext6  -y
+
+
+COPY . /app/
+WORKDIR  /app
+
+RUN pip install -r requirements.txt
+
+#CMD ["tail", "-f", "/dev/null"]
+#ENTRYPOINT sh
+
+WORKDIR /app
+
+CMD ["sleep", "infinity"]
+
+# https://docs.docker.com/engine/reference/run/
+# docker build -t bdnd/skraa  -f Dockerfile_skraa .
+# docker run -it -v C:\Data\GitHub\skraafun:/mnt/code -v c:\\data\\exdata:/mnt/exdata --entrypoint /bin/bash bdnd/skraa
+
+
+
+
+
